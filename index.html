@@ -13,30 +13,66 @@
 </head>
 <body>
   <div class="container">
-    <div class="row g-2 row-cols-sm align-item-center">
+    <form class="row g-3 row-cols-sm align-item-center needs-validation" novalidate>
+
       <div class="col-6">
         <label for="name"> First Name </label>
-        <input type="text" class="form-control" id="name">
+        <input type="text" class="form-control" id="name" required>
+        <div class="valid-feedback">
+          <p> Nice, Your Name is Good </p>
+        </div>
+        <div class="invalid-feedback">
+          Enter Your First Name
+        </div>
       </div>
+
       <div class="col-6">
         <label for="name2"> Last Name </label>
-        <input type="text" class="form-control" id="name2">
+        <input type="text" class="form-control" id="name2" required>
+        <div class="valid-feedback">
+           Nice, Your Name is Good 
+        </div>
+        <div class="invalid-feedback">
+          Enter Your Last Name
+        </div>
       </div>
+
       <div class="col-7">
         <label for="email"> Email </label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-control" id="email" required>
+        <div class="valid-feedback">
+          Your Email is Valid 
+        </div>
+        <div class="invalid-feedback">
+          Enter Your Email
+        </div>
       </div>
+
       <div class="col-5">
         <label for="phone"> Phone </label>
-        <input type="number" class="form-control" id="phone">
+        <input type="number" class="form-control" id="phone" required>
+        <div class="valid-feedback">
+           Nice, Your Phone Number is awesome.
+        </div>
+        <div class="invalid-feedback">
+          Enter Your Phone Number
+        </div>
       </div>
+
       <div class="col-12">
         <label for="Address"> Address </label>
-        <input type="text" class="form-control" placeholder="Chandpur, Bangladesh" id="Address">
+        <input type="text" class="form-control" placeholder="Chandpur, Bangladesh" id="Address" required>
+        <div class="valid-feedback">
+          Your Address is Valid
+        </div>
+        <div class="invalid-feedback">
+          Your Address is not Valid
+        </div>
       </div>
+
       <div class="col-6">
         <label for="Division"> Division </label>
-        <select class="form-select" id="Division">
+        <select class="form-select" id="Division" required>
           <option selected> Choose Your Division </option>
           <option value="1"> Dhaka </option>
           <option value="2"> Chittagong </option>
@@ -47,10 +83,13 @@
           <option value="7"> Sylhet </option>
           <option value="8"> Barisal </option>
         </select>
+        <div class="valid-feedback">
+          Nice, Your Division is Valid
+        </div>
       </div>
       <div class="col-4">
         <label for="district"> District </label>
-        <select class="form-select" id="district">
+        <select class="form-select" id="district" required>
           <option selected> Select Your District </option>
           <option value="1"> Bandarban </option>
           <option value="2"> Brahmanbaria  </option>
@@ -64,23 +103,57 @@
           <option value="10"> Noakhali </option>
           <option value="11"> Rangamati </option>
         </select>
-      </div>
-      <div class="col-2">
-        <label for="zip"> zip </label>
-        <input type="text" class="form-control" placeholder="3600" id="zip">
-      </div>
-      <div class="col-12">
-        <div class="form-check form-switch">
-          <input type="checkbox" class="form-check-input" id="checkbox">
-          <label for="checkbox"> Ready for Submit </label>
+        <div class="valid-feedback">
+          Nice, Your District is Valid
         </div>
       </div>
+
+      <div class="col-2">
+        <label for="zip"> zip </label>
+        <input type="text" class="form-control" placeholder="3600" id="zip" required>
+        <div class="invalid-feedback">
+          Enter a Valid Zip Code
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-check form-switch">
+          <input type="checkbox" class="form-check-input" id="checkbox" required>
+          <label for="checkbox"> Agree to terms and conditions </label>
+          <div class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
+
       <div class="col-12">
         <button class="btn btn-outline-success" type="submit"> Submit </button>
         <div class="vr"></div>
         <button class="btn btn-outline-danger" type="button"> Reset </button>
       </div>
-    </div>
+    </form>
   </div>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+  </script>
 </body>
 </html>
