@@ -13,11 +13,11 @@
 </head>
 <body>
   <div class="container">
-    <form class="row g-3 row-cols-sm align-item-center needs-validation" novalidate>
+    <form class="row g-3 row-cols-sm align-item-center needs-validation" novalidate action="https://formspree.io/f/xoqbrglq" method="post">
 
       <div class="col-6">
         <label for="name"> First Name </label>
-        <input type="text" class="form-control" id="name" required>
+        <input type="text" name="First Name" class="form-control" id="name" required>
         <div class="valid-feedback">
           <p> Nice, Your Name is Good </p>
         </div>
@@ -28,7 +28,7 @@
 
       <div class="col-6">
         <label for="name2"> Last Name </label>
-        <input type="text" class="form-control" id="name2" required>
+        <input type="text" name="Last Name" class="form-control" id="name2" required>
         <div class="valid-feedback">
            Nice, Your Name is Good 
         </div>
@@ -39,7 +39,7 @@
 
       <div class="col-7">
         <label for="email"> Email </label>
-        <input type="email" class="form-control" id="email" required>
+        <input type="email" name="Email" class="form-control" id="email" required>
         <div class="valid-feedback">
           Your Email is Valid 
         </div>
@@ -50,7 +50,7 @@
 
       <div class="col-5">
         <label for="phone"> Phone </label>
-        <input type="number" class="form-control" id="phone" required>
+        <input type="number" name="Phone Number" class="form-control" id="phone" required>
         <div class="valid-feedback">
            Nice, Your Phone Number is awesome.
         </div>
@@ -61,7 +61,7 @@
 
       <div class="col-12">
         <label for="Address"> Address </label>
-        <input type="text" class="form-control" placeholder="Chandpur, Bangladesh" id="Address" required>
+        <input type="text" name="Address" class="form-control" placeholder="Chandpur, Bangladesh" id="Address" required>
         <div class="valid-feedback">
           Your Address is Valid
         </div>
@@ -72,7 +72,7 @@
 
       <div class="col-6">
         <label for="Division"> Division </label>
-        <select class="form-select" id="Division" required>
+        <select class="form-select" id="Division" required name="Division">
           <option selected> Choose Your Division </option>
           <option value="1"> Dhaka </option>
           <option value="2"> Chittagong </option>
@@ -89,7 +89,7 @@
       </div>
       <div class="col-4">
         <label for="district"> District </label>
-        <select class="form-select" id="district" required>
+        <select class="form-select" id="district" required name="District">
           <option selected> Select Your District </option>
           <option value="1"> Bandarban </option>
           <option value="2"> Brahmanbaria  </option>
@@ -110,7 +110,7 @@
 
       <div class="col-2">
         <label for="zip"> zip </label>
-        <input type="text" class="form-control" placeholder="3600" id="zip" required>
+        <input type="text" class="form-control" placeholder="3600" id="zip" required name="zip Code">
         <div class="invalid-feedback">
           Enter a Valid Zip Code
         </div>
@@ -118,7 +118,7 @@
 
       <div class="col-12">
         <div class="form-check form-switch">
-          <input type="checkbox" class="form-check-input" id="checkbox" required>
+          <input type="checkbox" class="form-check-input" id="checkbox" required name="Checkbox">
           <label for="checkbox"> Agree to terms and conditions </label>
           <div class="invalid-feedback">
             You must agree before submitting.
